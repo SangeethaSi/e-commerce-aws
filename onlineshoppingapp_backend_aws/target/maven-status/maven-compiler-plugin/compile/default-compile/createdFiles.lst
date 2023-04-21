@@ -1,0 +1,10 @@
+com\shoppingapp\cogjava2915\model\DatabaseSequence.class
+com\shoppingapp\cogjava2915\repository\ProductDetailsRepository.class
+com\shoppingapp\cogjava2915\kafka\Consumer.class
+com\shoppingapp\cogjava2915\kafka\Producer.class
+com\shoppingapp\cogjava2915\repository\UserDetailsRepository.class
+com\shoppingapp\cogjava2915\ShoppingappApplication.class
+com\shoppingapp\cogjava2915\model\ProductDetails.class
+com\shoppingapp\cogjava2915\service\ShoppingappService.class
+com\shoppingapp\cogjava2915\model\UserDetails.class
+com\shoppingapp\cogjava2915\controller\ShoppingappController.class
