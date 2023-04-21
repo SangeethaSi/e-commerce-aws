@@ -1,0 +1,15 @@
+.update-product-container{
+    background-image: url("../../assets/images/OnlineShoppingbackground.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.update-product-form-content {
+    background-color: white;
+    height: max-content;
+    width: 50%;
+    padding-top: 10px;
+    margin: auto;
+    
+}

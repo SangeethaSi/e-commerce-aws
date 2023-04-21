@@ -1,0 +1,94 @@
+
+<div class = "add-product-container">
+    <div style = "margin-bottom: 10px;">
+        <app-logout-reset></app-logout-reset>
+    </div>
+    <div class = "add-product-form-content">
+        <label style="font-weight: bold; padding-left: 30%; padding-bottom: 3%;">ADD NEW PRODUCT</label>
+        <form [formGroup]= "addNewProductForm">
+            <div class="form-group" style="margin-bottom: 3%; height: 36px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Name: </label>
+                    <input type="text" formControlName = "productName" style="margin-left: 10%; padding-right: 10%;"
+                    [ngClass]="{'invalid-field': submitted && addNewProductForm.controls['productName'].errors}">
+                </div>
+                <div *ngIf = "submitted && addNewProductForm.controls['productName'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "addNewProductForm.controls['productName'].errors.required">
+                        Product Name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 37px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Price: </label>
+                    <input type="text" formControlName = "price" style="margin-left: 19.5%; padding-right: 10%"
+                    [ngClass]="{'invalid-field': submitted && addNewProductForm.controls['price'].errors}">
+                </div>
+                <div *ngIf = "submitted && addNewProductForm.controls['price'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "addNewProductForm.controls['price'].errors.required">
+                        Price is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 38px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Status: </label>
+                    <input type="text" formControlName = "productStatus" style="margin-left: 10%; padding-right: 10%"
+                    [ngClass]="{'invalid-field': submitted && addNewProductForm.controls['productStatus'].errors}">
+                </div>
+                <div *ngIf = "submitted && addNewProductForm.controls['productStatus'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "addNewProductForm.controls['productStatus'].errors.required">
+                        Product Status is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 58px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Description: </label>
+                    <textarea formControlName = "productDescription" style="margin-left: 5.5%; padding-right: 10.5%"
+                    [ngClass]="{'invalid-field': submitted && addNewProductForm.controls['productDescription'].errors}"></textarea>
+                </div>
+                <div *ngIf = "submitted && addNewProductForm.controls['productDescription'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "addNewProductForm.controls['productDescription'].errors.required">
+                        Product Name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 62px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Features: </label>
+                    <textarea formControlName = "features" style="margin-left: 16%; padding-right: 10.5%"
+                    [ngClass]="{'invalid-field': submitted && addNewProductForm.controls['features'].errors}"></textarea>
+                </div>
+                <div *ngIf = "submitted && addNewProductForm.controls['features'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "addNewProductForm.controls['features'].errors.required">
+                        Features are required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 43px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Image Url: </label>
+                    <input type="text" formControlName = "productImageUrl" style="margin-left: 7%; padding-right: 10%"
+                    [ngClass]="{'invalid-field': submitted && addNewProductForm.controls['productImageUrl'].errors}">
+                </div>
+                <div *ngIf = "submitted && addNewProductForm.controls['productImageUrl'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "addNewProductForm.controls['productImageUrl'].errors.required">
+                        Product Image URL is required
+                    </div>
+                </div>
+            </div>            
+            <div class="form-row">
+                <div class="form-group col" (click)= "onAddNewProduct()">
+                    <button class="btn btn-primary" style="margin-left: 72%;">Add</button>
+                </div>
+                <div style="margin-right: 10px">
+                    <button class="btn btn-secondary" (click) = "onResetProductForm()">Cancel</button>
+                </div>
+                <div class="form-group col">
+                    <button class="btn btn-primary" (click) = "onGoBack()">Go Back</button>
+                </div>
+            </div>
+        </form>       
+    </div>
+</div>

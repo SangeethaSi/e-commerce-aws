@@ -1,0 +1,107 @@
+
+<div class = "register-container">
+    <div class = "register-form-content">
+        <label style="font-weight: bold; padding-left: 30%;">NEW USER? REGISTER HERE</label>
+        <form [formGroup]= "registrationForm">
+            <div class="form-group" style="margin-bottom: 3%; height: 34px;">
+                <div class = "form-row">
+                    <label style="padding-left: 10%;">First Name: </label>
+                    <input type="text" formControlName = "firstName" style="margin-left: 14%; padding-right: 7%;"
+                    [ngClass] = "{'invalid-field' : submitted && registrationForm.controls['firstName'].errors}">       
+                </div>                
+                <div *ngIf = "submitted && registrationForm.controls['firstName'].errors" class="invalid-field-name form-row">
+                    <div *ngIf = "registrationForm.controls['firstName'].errors.required">
+                        First Name is required
+                    </div>                                 
+                </div>
+            </div>
+            <div class ="form-group" style="margin-bottom: 3%; height: 34px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Last Name: </label>
+                    <input type="text" formControlName = "lastName" style="margin-left: 14%; padding-right: 7%;"
+                    [ngClass] = "{'invalid-field': submitted && registrationForm.controls['lastName'].errors}">
+                </div>
+                <div *ngIf = "submitted && registrationForm.controls['lastName'].errors" class="form-row invalid-field-name">
+                    <div *ngIf = "registrationForm.controls['lastName'].errors.required">
+                        Last Name is required
+                    </div>
+                </div>
+            </div>
+           <div class="form-group" style="margin-bottom: 3%; height: 34px;">
+                 <div class="form-row">
+                    <label style="padding-left: 10%;">Email: </label>
+                    <input type="text" formControlName = "email" style="margin-left: 18.5%; padding-right: 7%;"
+                    [ngClass] = "{'invalid-field': submitted && registrationForm.controls['email'].errors}">
+                </div>
+                <div *ngIf = "submitted && registrationForm.controls['email'].errors" class="form-row invalid-field-name">
+                    <div *ngIf = "registrationForm.controls['email'].errors.required">
+                        Email is required
+                    </div>
+                </div>
+           </div>
+           <div class="form-group" style="margin-bottom: 3%; height: 34px;">
+                 <div class="form-row">
+                    <label style="padding-left: 10%;">Login ID: </label>
+                    <input type="text" formControlName = "loginId" style="margin-left: 16%; padding-right: 7%;"
+                    [ngClass] = "{'invalid-field': submitted && registrationForm.controls['loginId'].errors}">
+                </div>
+                <div *ngIf = "submitted && registrationForm.controls['loginId'].errors" class="form-row invalid-field-name">
+                    <div *ngIf = "registrationForm.controls['loginId'].errors.required">
+                        Login ID is required
+                    </div>
+                </div>
+           </div>
+           <div class="form-group" style="margin-bottom: 3%; height: 34px;">
+                 <div class="form-row">
+                    <label style="padding-left: 10%;">Password: </label>
+                    <input type="password" formControlName = "password" style="margin-left: 14.5%; padding-right: 7%;"
+                    [ngClass] = "{'invalid-field': submitted && registrationForm.controls['password'].errors}">
+                </div>
+                <div *ngIf = "submitted && registrationForm.controls['password'].errors" class="form-row invalid-field-name">
+                    <div *ngIf = "registrationForm.controls['password'].errors.required">
+                        Password is required
+                    </div>
+                </div>
+           </div>
+           <div class="form-group" style="margin-bottom: 3%; height: 34px;">
+                 <div class="form-row">
+                    <label style="padding-left: 10%;">Confirm Password: </label>
+                    <input type="password" formControlName = "confirmPassword" style="margin-left: 7.5%; padding-right: 7%;"
+                    [ngClass] = "{'invalid-field': submitted && registrationForm.controls['confirmPassword'].errors}">
+                </div>
+                <div *ngIf = "submitted && registrationForm.controls['confirmPassword'].errors" class="form-row invalid-field-name">
+                    <div *ngIf = "registrationForm.controls['confirmPassword'].errors.required">
+                        Confirm Password is required
+                    </div>
+                    <div *ngIf = "registrationForm.controls['confirmPassword'].errors.mustMatch">
+                        Confirm Password should match with Password
+                    </div>
+                </div>
+           </div>
+           <div class="form-group" style="margin-bottom: 3%; height: 35px;">
+                 <div class="form-row">
+                    <label style="padding-left: 10%;">Contact Number: </label>
+                    <input type="text" formControlName = "contactNumber" style="margin-left: 9%; padding-right: 7%;"
+                    [ngClass] = "{'invalid-field': submitted && registrationForm.controls['contactNumber'].errors}">
+                </div>
+                <div *ngIf = "submitted && registrationForm.controls['contactNumber'].errors" class="form-row invalid-field-name">
+                    <div *ngIf = "registrationForm.controls['contactNumber'].errors.required">
+                        Contact Number is required
+                    </div>
+                </div>
+           </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <button class="btn btn-primary" style="margin-left: 65%;" (click)= "onRegisterClick()">Register</button>
+                </div>
+                <div class="form-group col">
+                    <button class="btn btn-secondary" (click) = "onRegisterReset()">Cancel</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <p style="margin-left: 25%;">Already registered user? Please <a [routerLink]="['/login']"> Click Here to Login</a></p>
+            </div>
+        </form>       
+    </div>
+</div>
+

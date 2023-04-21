@@ -1,0 +1,15 @@
+.login-container{
+    background-image: url("../../assets/images/OnlineShoppingbackground.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.login-content{
+    background-color: white;
+    height: max-content;
+    width: 50%;
+    padding-top: 50px;
+    margin: auto;
+}

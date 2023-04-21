@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.invalid-field {
+    border-color: #FF4D4D;
+}
+
+.invalid-field-name {
+    color: #FF4D4D;
+    margin-left: 18em;
+}

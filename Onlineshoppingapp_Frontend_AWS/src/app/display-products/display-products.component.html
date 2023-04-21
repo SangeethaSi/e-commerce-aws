@@ -1,0 +1,64 @@
+<div class = "product-list-content">
+    <app-logout-reset></app-logout-reset>
+    <div [formGroup] = "searchForm">
+        <div class = "form-row search-form-content">
+            <div class="form-group col" style="height: 30px;">
+                <div class = "form-row" style="padding-left: 7em;">
+                    <label style="font-weight: bold;">Search by Product Name: </label>
+                    <input type="text" formControlName = "searchProductText" size="35"
+                    [ngClass] = "{'invalid-field': submitted && searchForm.controls['searchProductText'].errors}">             
+                </div>
+                <div class = "form-row" style="color: red; margin-left: 10em;"
+                *ngIf = "submitted && searchForm.controls['searchProductText'].errors">
+                    <div *ngIf = "searchForm.controls['searchProductText'].errors.required">
+                        Please type Search Text
+                    </div>
+                </div>
+            </div>           
+            <div style="padding-top: 25px; padding-right: 15px;">
+                <button class="btn btn-primary" (click) = "onProductSearch()">Search</button>
+            </div>
+            <div style="padding-top: 25px; padding-right: 10px;">              
+                <button class="btn btn-secondary" (click) = "onResetSearch()">Cancel</button>
+            </div>
+            <div class="form-group col" style="padding-top: 25px; padding-right: 10px;">              
+                <button [hidden]= "!isUserAdmin" class="btn btn-primary" (click) = "onAddProductClick()">Add Product</button>
+            </div>
+        </div>
+        
+    </div>
+    <div *ngFor = "let product of productList">
+        <div class = "card product-card-content">
+            <img [src]=product.productImageUrl class="product-image">
+            <div class="card-body">
+                <h5 class = "card-title" style="text-align: center; font-weight: bold; font-size: larger;"> {{product.productName}} </h5>
+                <div class="card-text">
+                    <p>
+                    <span style="font-weight: bold;">Price: </span> {{product.price}} 
+                    <br>
+                    <span style="font-weight: bold;">Status: </span> <span style = "font-style: italic;">{{product.productStatus}} </span>
+                    <br> 
+                    <span style="font-weight: bold;">Description: </span> {{product.productDescription}} 
+                    <br>
+                    <span style="font-weight: bold;">Features: </span> {{product.features}}
+                    </p>
+                    <br>
+                    <button type="submit" (click) = "onProductUpdateClick(product)" class="btn btn-primary"
+                    style="margin-left: 5em;" [hidden]= "!isUserAdmin">Update</button>
+                    <button type="submit" (click) = "onProductDeleteClick(product)" class="btn btn-primary"
+                    style="margin-left: 3em;" [hidden]= "!isUserAdmin">Delete</button>
+                </div>
+            </div>
+        </div>     
+    </div>
+    <div *ngIf = "isProductsNotPresent">
+        <div class = "card" class = "card no-product-card-content">
+            <div class="card-body">
+                <h5 class = "card-title" style="text-align: center;">
+                    No Products available
+                </h5>
+                <img src = "../../assets/images/product-not-found.jpg" class = "no-product-image">               
+            </div>
+        </div>
+    </div>
+</div>

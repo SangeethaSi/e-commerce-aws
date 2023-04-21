@@ -1,0 +1,104 @@
+
+<div class = "update-product-container">
+    <div style = "margin-bottom: 10px;">
+        <app-logout-reset></app-logout-reset>
+    </div>
+    <div class = "update-product-form-content">
+        <label style="font-weight: bold; padding-left: 30%; padding-bottom: 3%;">UPDATE PRODUCT DETAILS</label>
+        <form [formGroup]= "updateProductDetailsForm">
+            <div class="form-group" style="margin-bottom: 3%; height: 36px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Name: </label>
+                    <input type="text" formControlName = "productName" style="margin-left: 10%; padding-right: 10%;"
+                    [readonly] = "isProductName"
+                    [ngClass]="{'invalid-field': submitted && updateProductDetailsForm.controls['productName'].errors}">
+                </div>
+                <div *ngIf = "submitted && updateProductDetailsForm.controls['productName'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "updateProductDetailsForm.controls['productName'].errors.required">
+                        Product Name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 37px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Price: </label>
+                    <input type="text" formControlName = "price" style="margin-left: 18.7%; padding-right: 10%"
+                    [ngClass]="{'invalid-field': submitted && updateProductDetailsForm.controls['price'].errors}">
+                </div>
+                <div *ngIf = "submitted && updateProductDetailsForm.controls['price'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "updateProductDetailsForm.controls['price'].errors.required">
+                        Price is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 37px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Quantity: </label>
+                    <input type="text" formControlName = "productQuantity" style="margin-left: 7.5%; padding-right: 10%"
+                    [ngClass]="{'invalid-field': submitted && updateProductDetailsForm.controls['productQuantity'].errors}">
+                </div>
+                <div *ngIf = "submitted && updateProductDetailsForm.controls['productQuantity'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "updateProductDetailsForm.controls['productQuantity'].errors.required">
+                        Product Quantity is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 38px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Status: </label>
+                    <input type="text" formControlName = "productStatus" style="margin-left: 9.5%; padding-right: 10%"
+                    [ngClass]="{'invalid-field': submitted && updateProductDetailsForm.controls['productStatus'].errors}">
+                </div>
+                <div *ngIf = "submitted && updateProductDetailsForm.controls['productStatus'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "updateProductDetailsForm.controls['productStatus'].errors.required">
+                        Product Status is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 58px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Description: </label>
+                    <textarea formControlName = "productDescription" style="margin-left: 5%; padding-right: 11%"
+                    [ngClass]="{'invalid-field': submitted && updateProductDetailsForm.controls['productDescription'].errors}"></textarea>
+                </div>
+                <div *ngIf = "submitted && updateProductDetailsForm.controls['productDescription'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "updateProductDetailsForm.controls['productDescription'].errors.required">
+                        Product Name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 62px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Features: </label>
+                    <textarea formControlName = "features" style="margin-left: 16%; padding-right: 11%"
+                    [ngClass]="{'invalid-field': submitted && updateProductDetailsForm.controls['features'].errors}"></textarea>
+                </div>
+                <div *ngIf = "submitted && updateProductDetailsForm.controls['features'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "updateProductDetailsForm.controls['features'].errors.required">
+                        Features are required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 3%; height: 43px;">
+                <div class="form-row">
+                    <label style="padding-left: 10%;">Product Image Url: </label>
+                    <input type="text" formControlName = "productImageUrl" style="margin-left: 7%; padding-right: 10%"
+                    [ngClass]="{'invalid-field': submitted && updateProductDetailsForm.controls['productImageUrl'].errors}">
+                </div>
+                <div *ngIf = "submitted && updateProductDetailsForm.controls['productImageUrl'].errors" class= "form-row invalid-field-name"> 
+                    <div *ngIf = "updateProductDetailsForm.controls['productImageUrl'].errors.required">
+                        Product Image URL is required
+                    </div>
+                </div>
+            </div>            
+            <div class="form-row">
+                <div class="form-group col" (click)= "onUpdateProduct()">
+                    <button class="btn btn-primary" style="margin-left: 72%;">Update</button>
+                </div>
+                <div class="form-group col">
+                    <button class="btn btn-secondary" (click) = "onResetUpdateProduct()">Cancel</button>
+                </div>
+            </div>
+        </form>       
+    </div>
+</div>

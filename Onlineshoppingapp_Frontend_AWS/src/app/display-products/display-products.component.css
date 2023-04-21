@@ -1,0 +1,37 @@
+.product-list-content {
+    background-image: url("../../assets/images/OnlineShoppingbackground.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.product-card-content {
+   width: 25em;
+   margin: auto;
+   margin-bottom: 10px;
+}
+
+.product-image {
+    height: 11em;
+    width: 11em;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.search-form-content {
+    margin-bottom: 2em;
+    margin-left: 13em;
+}
+
+.no-product-card-content {
+    width: 40em;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.no-product-image {
+    height: 14em;
+    width: 15em;
+    margin: auto;
+    margin-left: 10em;
+}
